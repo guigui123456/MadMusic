@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAD Music</title>
+    
+    <!-- Fontes e ícones (SVG) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fundo-musica"></div>
+
+    <header>
+        <button class="voltar" id="btnVoltar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+
+        <h1>MAD Music</h1>
+
+        <!-- Menu Desktop -->
+        <nav class="nav-desktop">
+            <a href="#">Home</a>
+            <span class="divisor">|</span>
+            <a href="#">Playlists</a>
+            <span class="divisor">|</span>
+            <a href="#">Sign In</a>
+            <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </a>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <button class="menu-toggle" id="menuToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Dropdown Mobile -->
+    <nav class="dropdown-mobile" id="dropdownMobile">
+        <a href="#">Home</a>
+        <a href="#">Playlists</a>
+        <a href="#">Sign In</a>
+        <a href="#">Busca</a>
+    </nav>
+
+    <main>
+        <div class="container-conteudo">
+            
+            <!-- Infos da música -->
+            <section class="musica-info">
+                <h2>Selecione uma música</h2>
+                <p>Escolha uma das capas abaixo</p>
+
+                <div class="botoes">
+                    <button class="botao-play">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                        </svg>
+                        Play
+                    </button>
+
+                    <button class="botao-like">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" >
+                            <path d="M1 21h4V9H1v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                        </svg>
+                    </button>
+
+                    <button class="botao-dislike">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" >
+                            <path d="M23 3h-4v12h4V3zM1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2H6c-.83 0-1.54.5-1.84 1.22L1.14 11.27c-.09.23-.14.47-.14.73v2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grid de capas -->
+            <section class="lista-musicas">
+                <img src="imagens/trem-das-onze.jpg" alt="Capa de Trem das Onze">
+                <img src="imagens/só-os-loucos-sabem.jpg" alt="Capa de Só os Loucos Sabem">
+                <img src="imagens/céu-azul.jpg" alt="Capa de Céu Azul">
+                <img src="imagens/a-vida-é-desafio.jpg" alt="Capa de A Vida É Desafio">
+                <img src="imagens/evidências.jpg" alt="Capa de Evidências">
+            </section>
+            
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

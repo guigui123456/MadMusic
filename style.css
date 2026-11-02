@@ -1,0 +1,224 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #3d3d3d;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Fundo */
+.fundo-musica {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    
+    z-index: -1;
+}
+
+.fundo-musica::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 60px;
+    padding: 0 40px;
+}
+
+header h1 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-desktop {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+.nav-desktop a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-desktop .divisor {
+    color: rgba(255, 255, 255, 0.4); 
+    font-size: 12px;
+}
+
+/* Esconde itens do mobile no PC */
+.voltar, .menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-mobile {
+    display: none;
+}
+
+/* Conteúdo principal */
+main {
+    padding-top: 25vh; 
+}
+
+.container-conteudo {
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.musica-info h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.musica-info p {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.botao-play {
+    background-color: #e91e63;
+    color: #ffffff;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.botao-like, .botao-dislike {
+    background: none;
+    border: none;
+    color: #ffffff;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.botao-like.selecionado, .botao-dislike.selecionado {
+    color: #e91e63;
+}
+
+/* Grid de capas */
+.lista-musicas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.lista-musicas img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.2s;
+    display: block;
+}
+
+.lista-musicas img.selecionada {
+    border: 3px solid #e91e63;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    header h1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-desktop { display: none; }
+    
+    .voltar, .menu-toggle { 
+        display: block; 
+    }
+
+    .dropdown-mobile {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #2a2a2a;
+        border-radius: 4px;
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 10;
+    }
+    
+    .dropdown-mobile.ativo { display: flex; }
+    
+    .dropdown-mobile a { 
+        color: white; 
+        text-decoration: none; 
+        font-size: 14px; 
+        font-weight: 700; 
+    }
+
+    main {
+        padding-top: 15vh;
+    }
+
+    .container-conteudo {
+        width: 90%;
+    }
+
+    .musica-info h2 {
+        font-size: 32px;
+    }
+
+    .lista-musicas {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
