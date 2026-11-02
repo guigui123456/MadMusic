@@ -21,8 +21,9 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
-    
+    filter: blur(8px);
     z-index: -1;
+    transition: background-image 0.4s ease;
 }
 
 .fundo-musica::after {
@@ -85,6 +86,7 @@ header h1 {
 
 /* Conteúdo principal */
 main {
+    position: relative;
     padding-top: 25vh; 
 }
 
@@ -148,6 +150,7 @@ main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 .lista-musicas img {
